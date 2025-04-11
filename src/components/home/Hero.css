@@ -1,0 +1,124 @@
+.homeSection ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.homeSection ul li {
+  text-decoration: none;
+  margin: 7px;
+}
+
+.homeSection img {
+  width: 25px;
+  height: 25px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.homeTitle {
+  font-size: 25px;
+  font-weight: bold;
+  color: blue;
+}
+#homeLogo {
+  width: 30px;
+  height: 30px;
+}
+.homeBtn {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(85, 70, 245, 0.215);
+  margin-left: 30px;
+}
+
+.homeBtn span {
+  font-size: 14px;
+  color: rgb(71, 71, 247);
+  display: block;
+  margin-left: 5px;
+}
+.catalogIcon {
+  font-size: 24px;
+  color: rgb(71, 71, 247);
+}
+
+.homeSearching input {
+  width: 550px;
+  height: 40px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.244);
+}
+.homeSearching span {
+  display: block;
+  font-size: 23px;
+  width: 70px;
+  height: 40px;
+  background-color: rgba(42, 42, 42, 0.121);
+  color: rgba(0, 0, 0, 0.707);
+  margin-left: -70px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+}
+
+.homeActions {
+  padding: 0 3px;
+  align-items: center;
+}
+
+.homeActions span {
+  font-size: 18px;
+}
+
+.homeActions p {
+  padding-top: 17px;
+  margin-left: 7px;
+}
+
+#homeItems li {
+  margin: 0 18px;
+  color: rgba(0, 0, 0, 0.649);
+}
+#homeProducts {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.homeProducts p {
+  margin-left: 5px;
+}
+
+.takedItems {
+  background-color: blue;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 3px 7px;
+}
+
+#caruselImg {
+  margin: 0 auto;
+  width: 1280px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.basket {
+  display: flex;
+  width: 120px;
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+  height: 45px;
+  border-radius: 10px;
+}
+
+.basket:hover {
+  background-color: rgba(128, 128, 128, 0.463);
+}

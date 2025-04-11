@@ -1,0 +1,13 @@
+.caruselCards {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.caruselCards::-webkit-scrollbar {
+  display: none;
+}
+
+.caruselCard {
+  width: 230px;
+}

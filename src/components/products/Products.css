@@ -1,0 +1,23 @@
+.productTitle {
+  padding-top: 50px;
+}
+.productsCards {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.showAgainBtn {
+  text-align: center;
+}
+
+.showAgainBtn button {
+  min-width: 300px;
+  width: 700px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
