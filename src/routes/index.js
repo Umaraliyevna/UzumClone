@@ -1,21 +1,22 @@
-import ProductInfo from "../pages/product_info/ProductInfo";
-import Home from "../pages/home/home";
-import Basket from "../pages/basket/basket";
-const id = location.search.split("=")[1];
-export const Public_routes = [
+import ProductInfo from "../pages/ProductInfo/ProductInfo";
+import Home from "../pages/Home/Home";
+import Basket from "../pages/basket/Basket";
+import PATHS from "./routePath";
+
+export const PUBLIC_ROUTES = [
   {
     key: "ProductInfo",
     element: <ProductInfo />,
-    path: `/product-info/:${id}`,
+    path: `${PATHS.productInfo}/:id`,
   },
   {
     key: "Home",
     element: <Home />,
-    path: "/",
+    path: PATHS.home,
   },
   {
     key: "Basket",
     element: <Basket />,
-    path: "/basket",
+    path: PATHS.basket,
   },
 ];
