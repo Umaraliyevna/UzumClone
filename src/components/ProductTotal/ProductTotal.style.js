@@ -6,8 +6,6 @@ export const QuantityContainerStyle = styled.div`
   gap: 10px;
 
   .quantityControl {
-    width: 220px;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,5 +39,8 @@ export const QuantityContainerStyle = styled.div`
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+  }
+  .hiddenButton {
+    display: none;
   }
 `;

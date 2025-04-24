@@ -5,7 +5,7 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import { RiGooglePlayLine, RiTelegram2Fill } from "react-icons/ri";
 import { FaApple, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 
-import { FooterStyle } from "./Footer.style";
+import { FooterStyle } from "./index.style";
 
 function Footer() {
   return (
@@ -105,7 +105,6 @@ function Footer() {
                   </Typography>
                 </Stack>
               </Stack>
-
               <Typography variant="body1" pt={2}>
                 Uzum ijtimoiy tarmoqlarda
               </Typography>

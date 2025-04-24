@@ -3,8 +3,9 @@ import { FaAngleRight } from "react-icons/fa6";
 
 import { Container, Stack } from "@mui/material";
 
-import PRODUCT_LIST from "src/mocs/ProductCard";
 import { ProductCard } from "src/components";
+import PRODUCT_LIST from "src/mocs/ProductCard";
+
 import { Carusel } from "./ProductCarusel.style";
 
 function ProductCarusel({ title }) {

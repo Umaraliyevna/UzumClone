@@ -1,43 +1,55 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Button, IconButton, Stack, Typography } from "@mui/material";
-
-import { DeliveryInfo, OverAllInfo, ProductContainer } from "./Basket.style";
+import { Button, Container, Stack, Typography } from "@mui/material";
 import BasketProduct from "./BasketProduct/BasketProduct";
+import { DeliveryInfo, OverAllInfo, ProductContainer } from "./Basket.style";
+import { Info } from "@mui/icons-material";
 
 function Basket() {
   const basketItems = useSelector((store) => store.basket);
 
   return (
-    <div className="container">
-      <Stack direction="row">
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
         <ProductContainer>
-          {basketItems.map(({ image, title, changedSum, realSum }) => (
+          {basketItems.map(({ product }) => (
             <BasketProduct
-              image={image}
-              name={title}
-              description={title}
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              name={product.title}
+              description={product.title}
               color="black"
-              oldPrice={changedSum}
-              price={realSum}
+              oldPrice={product.changedSum}
+              price={product.realSum}
             />
           ))}
         </ProductContainer>
+
         <OverAllInfo>
           <Stack direction="row" className="deliverState">
-            <p>Bepul yetkazib beramiz: olib ketish punkti yoki kuryer orqali</p>
-            <IconButton size="small"></IconButton>
+            <Info sx={{ color: "#6b7280", fontSize: 20 }} />
+            <Typography variant="body2">
+              Topshirish punktiga korxona berish <strong>5000 so'm</strong>{" "}
+              <br />
+              Yana <strong>42 010 so'm</strong>siz yaxshi odam siz.
+            </Typography>
           </Stack>
-          <DeliveryInfo>
-            <p>Sizning buyurtmangiz</p>
 
-            <Stack direction="row" justifyContent="space-between">
-              <p>Mahsulotlar (15):</p>
-              <p>6 178 480 so'm</p>
+          <DeliveryInfo>
+            <Typography variant="subtitle1" fontWeight={600}>
+              Buyurtmangiz
+            </Typography>
+
+            <Stack direction="row" justifyContent="space-between" mt={1}>
+              <Typography variant="body2">
+                Mahsulotlar ({basketItems.length}):
+              </Typography>
+              <Typography variant="body2">0 so'm</Typography>
             </Stack>
 
             <Typography className="deliviryDate">
-              17 aprel kuni yetkaziladi
+              Yetkazib berish: 25-aprel
             </Typography>
 
             <Stack
@@ -46,32 +58,33 @@ function Basket() {
               className="resultSum"
             >
               <span>Jami:</span>
-              <span>3 310 758 so'm</span>
+              <span>0 so'm</span>
             </Stack>
 
-            <Typography className="benefit">
-              Siz tejaysiz: 2 867 722 so'm
-            </Typography>
+            <Typography className="benefit">Sharhlar: 0 so'm</Typography>
 
             <Button
               variant="contained"
               fullWidth
               sx={{
-                backgroundColor: "#a155e5",
+                backgroundColor: "#a855f7",
                 borderRadius: "12px",
                 textTransform: "none",
                 fontWeight: 600,
+                fontSize: "16px",
+                py: 1.5,
+                mt: 1,
                 "&:hover": {
-                  backgroundColor: "#8e3dd7",
+                  backgroundColor: "#9333ea",
                 },
               }}
             >
-              Rasmiylashtirishga o'tish
+              Rasmiylashtirishga o‘tish
             </Button>
           </DeliveryInfo>
         </OverAllInfo>
       </Stack>
-    </div>
+    </Container>
   );
 }
 

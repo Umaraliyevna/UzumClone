@@ -1,30 +1,6 @@
 import React, { useCallback, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  FaStar,
-  FaCheck,
-  FaMoneyBills,
-  FaRegStarHalfStroke,
-} from "react-icons/fa6";
-import { TbMoneybag } from "react-icons/tb";
-import { IoBagCheckOutline } from "react-icons/io5";
-import { CiHeart, CiCreditCard1, CiBank } from "react-icons/ci";
-
-import ProductBrend from "src/assets/ProductInfobrand.png";
-
-import {
-  description_images,
-  images_from_custom,
-  images_product,
-} from "src/mocs/productInfomoc";
-import { ProductCarusel, ProductTotal } from "src/components";
-import {
-  addToBasket,
-  decrementQuantity,
-  incrementQuantity,
-} from "src/redux/sliceRedux/basket";
 import {
   Box,
   Button,
@@ -36,6 +12,19 @@ import {
   Typography,
 } from "@mui/material";
 import {
+  FaStar,
+  FaCheck,
+  FaMoneyBills,
+  FaRegStarHalfStroke,
+} from "react-icons/fa6";
+import { TbMoneybag } from "react-icons/tb";
+import { IoBagCheckOutline } from "react-icons/io5";
+import { CiHeart, CiCreditCard1, CiBank } from "react-icons/ci";
+
+import { addToBasket } from "src/redux/sliceRedux/basket";
+import { ProductCarusel, ProductTotal } from "src/components";
+
+import {
   ImagesInfoStyle,
   ProductCostCardStyle,
   ProductInfoStyle,
@@ -43,10 +32,13 @@ import {
 
 function ProductInfo() {
   const dispatch = useDispatch();
+
   const productInfo = useSelector((store) => store.product);
+
   const { id, image, title, reyting, perMonthSum, changedSum, realSum } =
     productInfo;
 
+  console.log(id);
   const handleProduct = useCallback(() => {
     dispatch(addToBasket({ product: productInfo, quantity: 1 }));
   }, [dispatch, id]);
@@ -258,9 +250,7 @@ function ProductInfo() {
                 hatto nozik chaqaloq terisiga ham mos keladi.
               </Typography>
               <Box>
-                {description_images.map((image) => {
-                  return <img src={image} />;
-                })}
+                <img src={image} />
               </Box>
             </Box>
           </ImagesInfoStyle>
@@ -360,9 +350,9 @@ function ProductInfo() {
             </Box>
             <Box className="storeInfo">
               <Stack direction="row" alignItems="center">
-                <img src={ProductBrend} alt="NIVEA" className="storeLogo" />
+                <img src={image} alt="NIVEA" className="storeLogo" />
                 <Box>
-                  <Typography>"NIVEA"</Typography>
+                  <Typography>{title}</Typography>
                   <Typography className="rating">
                     <FaStar className="ratingIcon" /> {reyting} (35481 baho)
                   </Typography>

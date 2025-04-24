@@ -16,12 +16,22 @@ export const ProductCardStyle = styled.div`
     height: 309px;
     border-radius: 10px;
   }
+  .productHeartButton {
+    position: absolute;
+    left: 170px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+  }
 
   .productHeart {
-    position: absolute;
-    left: 180px;
-    top: 25px;
-    font-size: 20px;
+    font-size: 24px;
+    z-index: 1;
+  }
+
+  .activeHeart {
+    color: red !important;
+    font-size: 24px;
     z-index: 1;
   }
 

@@ -1,15 +1,19 @@
-import { Box, Button } from "@mui/material";
 import React, { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { QuantityContainerStyle } from "./ProductTotal.style";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Box, Button } from "@mui/material";
+
 import {
   decrementQuantity,
   incrementQuantity,
 } from "src/redux/sliceRedux/basket";
 
-function ProductTotal({ id, children }) {
+import { QuantityContainerStyle } from "./ProductTotal.style";
+
+function ProductTotal({ id, children, style, boxWidth, boxHeight }) {
   const dispatch = useDispatch();
+
   const basket = useSelector((store) => store.basket);
 
   const quantity =
@@ -27,14 +31,19 @@ function ProductTotal({ id, children }) {
   if (!quantity) {
     return children;
   }
+
   return (
     <QuantityContainerStyle>
-      <Box className="quantityControl">
+      <Box
+        className="quantityControl"
+        width={boxWidth || "220px"}
+        height={boxHeight || "50px"}
+      >
         <Button onClick={decrementAmount}>−</Button>
         <span>{quantity}</span>
         <Button onClick={incrementAmount}>+</Button>
       </Box>
-      <Link to={`/basket`}>
+      <Link to={`/basket`} className={style}>
         <button className="cartButton">Savatga o'tish</button>
       </Link>
     </QuantityContainerStyle>

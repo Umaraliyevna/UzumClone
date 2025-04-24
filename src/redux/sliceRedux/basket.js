@@ -13,9 +13,18 @@ const basketSlice = createSlice({
         state.push({ product, quantity });
       }
     },
-    incrementQuantity: (state, action) => {
-      console.log(action.payload);
 
+    removeFromBasket: (state, action) => {
+      const index = state.findIndex(
+        (item) => item.product.id === action.payload
+      );
+      if (index !== -1) {
+        state.splice(index, 1);
+      }
+      return state;
+    },
+
+    incrementQuantity: (state, action) => {
       state.find(({ product }) => product.id === action.payload).quantity += 1;
       return state;
     },
@@ -26,6 +35,10 @@ const basketSlice = createSlice({
   },
 });
 
-export const { addToBasket, decrementQuantity, incrementQuantity } =
-  basketSlice.actions;
+export const {
+  addToBasket,
+  removeFromBasket,
+  decrementQuantity,
+  incrementQuantity,
+} = basketSlice.actions;
 export default basketSlice.reducer;
