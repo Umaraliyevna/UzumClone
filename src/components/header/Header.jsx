@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import {
@@ -20,16 +20,57 @@ import { FaAngleDown } from "react-icons/fa6";
 import { SlLocationPin } from "react-icons/sl";
 import { IoPersonOutline } from "react-icons/io5";
 import { RiArchiveStackLine } from "react-icons/ri";
-import { MdOutlineSearch, MdOutlineShoppingBag } from "react-icons/md";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
+import LoginForm from "src/LoginForm";
+import PATHS from "src/routes/routePath";
 import logo from "src/assets/headerImages/image.png";
 import check from "src/assets/headerImages/_vyg.png";
 import flag from "src/assets/headerImages/header.png";
 import star from "src/assets/headerImages/Topsales.png";
-import { HeaderStyle, HeaderPartStyle, Ul } from "./Header.style";
+
+import { HeaderStyle, HeaderPartStyle } from "./Header.style";
+
+const emails = ["username@gmail.com", "user02@gmail.com"];
 
 function Header() {
+  const [user, setUser] = useState({});
+  const [open, setOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(emails[1]);
+
   const basketItems = useSelector((store) => store.basket);
+  const navigate = useNavigate();
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value) => {
+    setOpen(false);
+    setSelectedValue(value);
+  };
+
+  const handleLogin = (username, password) => {
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    setUser({ username, password });
+  };
+
+  useEffect(() => {
+    const savedUsername = localStorage.getItem("username");
+    const savedPassword = localStorage.getItem("password");
+    if (savedUsername && savedPassword) {
+      setUser({ username: savedUsername, password: savedPassword });
+    }
+  }, []);
+
+  const openFavouritePage = useCallback(() => {
+    navigate(`${PATHS.favourite}`);
+  }, []);
+
   return (
     <HeaderStyle>
       <Box className="headerWrapper">
@@ -138,18 +179,33 @@ function Header() {
               </Box>
             </ListItem>
             <ListItem className="flex homeActions mainListItem">
-              <IoPersonOutline className="homeActionsIcon" />
-
-              <Typography variant="body2" ml={0.6}>
-                Kirish
-              </Typography>
+              <Button onClick={handleClickOpen}>
+                <IoPersonOutline className="homeActionsIcon" />
+                <Typography variant="body2" ml={0.6}>
+                  Kirish
+                </Typography>
+                <LoginForm
+                  selectedValue={selectedValue}
+                  open={open}
+                  onClose={handleClose}
+                  username={username}
+                  setUsername={setUsername}
+                  password={password}
+                  setPassword={setPassword}
+                  isLoggedIn={isLoggedIn}
+                  setIsLoggedIn={setIsLoggedIn}
+                  onLogin={handleLogin}
+                />
+              </Button>
             </ListItem>
             <ListItem className="flex homeActions mainListItem">
-              <CiHeart className="homeActionsIcon" />
+              <Button onClick={openFavouritePage} color="#333333">
+                <CiHeart className="homeActionsIcon" />
 
-              <Typography variant="body2" ml={0.6}>
-                Saralangan
-              </Typography>
+                <Typography variant="body2" ml={0.6}>
+                  Saralangan
+                </Typography>
+              </Button>
             </ListItem>
             <Link to={`/basket`}>
               <Button className="basket">

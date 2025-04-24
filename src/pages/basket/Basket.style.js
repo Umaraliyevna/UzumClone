@@ -1,54 +1,60 @@
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
-  width: 70%;
+  width: 100%;
+  max-width: 60%;
   border: 1px solid rgba(106, 105, 105, 0.26);
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff;
 `;
+
 export const OverAllInfo = styled.div`
-  max-width: 360px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 340px;
   padding: 16px;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: "Arial", sans-serif;
 
   .deliverState {
-    background: #f9f9fb;
-    border: 1px solid #eee;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 16px;
-    align-items: flex-start;
     gap: 10px;
     margin-bottom: 16px;
+    align-items: center;
   }
 `;
 
 export const DeliveryInfo = styled.div`
-  border: 1px solid #eee;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 16px;
 
   .deliviryDate {
     text-align: center;
-    color: #a155e5;
+    color: #7c3aed;
     font-weight: 500;
-    border: 1px solid #a155e5;
+    background: #f5f3ff;
+    border: 1px solid #ddd6fe;
     border-radius: 8px;
-    padding: 6px;
-    font-size: 13px;
-    margin-bottom: 14px;
+    padding: 8px;
+    font-size: 14px;
+    margin: 16px 0;
   }
 
   .resultSum {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: #111827;
   }
 
   .benefit {
-    color: #2e9b4d;
-    font-size: 13px;
+    color: #10b981;
+    font-size: 14px;
     text-align: center;
     margin-bottom: 16px;
   }

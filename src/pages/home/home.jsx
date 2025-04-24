@@ -5,9 +5,9 @@ import { Button, Box, Container, Stack, Typography, Grid } from "@mui/material";
 
 import { FaAngleRight } from "react-icons/fa6";
 
-import PRODUCT_LIST from "src/mocs/ProductCard";
-import images from "src/mocs/homeCaruselMoc";
 import getImagUrl from "src/mocs/images";
+import images from "src/mocs/homeCaruselMoc";
+import PRODUCT_LIST from "src/mocs/ProductCard";
 import { ProductCard, ProductCarusel } from "src/components";
 
 import "slick-carousel/slick/slick.css";

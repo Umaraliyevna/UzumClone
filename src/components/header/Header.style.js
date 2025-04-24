@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderStyle = styled.div`
   .headerWrapper {
     background-color: rgba(212, 213, 215, 0.449);
-    padding: 0 10px;
+    margin: 0 auto;
   }
 
   .headerFlag {
@@ -170,12 +170,17 @@ export const HeaderPartStyle = styled.div`
   }
 
   .homeActions {
-    padding: 0 10px;
+    padding: 0 3px;
     align-items: center;
     color: #555;
     cursor: pointer;
     font-size: 14px;
     white-space: nowrap;
+  }
+
+  .homeActions p {
+    text-transform: capitalize;
+    color: #555;
   }
 
   .homeActions:hover {
@@ -185,6 +190,7 @@ export const HeaderPartStyle = styled.div`
   .homeActionsIcon {
     font-size: 20px;
     margin-right: 5px;
+    color: #555;
   }
 
   .homeItems {
