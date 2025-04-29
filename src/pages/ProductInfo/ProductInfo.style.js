@@ -12,9 +12,16 @@ export const ProductInfoStyle = styled.div`
       color: rgba(0, 0, 0, 0.54);
     }
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    .productInfoList {
+      display: none;
+    }
+  }
 `;
 
 export const ImagesInfoStyle = styled.div`
+  min-width: 68%;
   .productIcon {
     color: yellow;
     padding-top: 0;
@@ -48,7 +55,7 @@ export const ImagesInfoStyle = styled.div`
     scrollbar-width: none;
   }
   .productImagesGorizontal img {
-    width: 320px;
+    min-width: 280px;
     height: 450px;
     border-radius: 15px;
     margin: 5px;
@@ -81,7 +88,7 @@ export const ImagesInfoStyle = styled.div`
   }
 
   .commentaryCard {
-    width: 42%;
+    min-width: 43%;
     border: 0.5px solid rgba(51, 50, 50, 0.422);
     padding: 20px;
     border-radius: 20px;
@@ -89,7 +96,7 @@ export const ImagesInfoStyle = styled.div`
   }
   .showAllComment {
     margin: 5px auto;
-    width: 95%;
+    width: 100%;
     padding: 15px;
     background-color: #5d6e854d;
     text-transform: capitalize;
@@ -116,20 +123,80 @@ export const ImagesInfoStyle = styled.div`
   }
 
   .productDescription img {
-    margin: 10px 60px;
-    width: 650px;
+    display: block;
+    text-align: center;
+    width: min-content;
     height: 650px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+    min-width: 100%;
+
+    .commentaryCard {
+      min-width: 43%;
+      padding: 15px;
+    }
+
+    .productImagesVertical {
+      width: 100px;
+    }
+
+    .productImagesGorizontal {
+      margin-left: 5px;
+    }
+    .productImagesVertical img {
+      width: 100%;
+      height: 100px;
+      margin: 3px;
+    }
+    .productImagesGorizontal img {
+      min-width: 220px;
+      width: 380px;
+      margin: 3px;
+    }
+    .productDescription img {
+      width: 95%;
+      height: 580px;
+    }
+  }
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    width: 100%;
+    .commentaryCard {
+      min-width: 40%;
+      padding: 15px;
+    }
+
+    .productImagesVertical {
+      display: none;
+    }
+
+    .productImagesGorizontal {
+      margin-left: 0px;
+    }
+
+    .gorizontalImage1 {
+      display: none;
+    }
+    .productImagesGorizontal img {
+      min-width: 250px;
+      width: 550px;
+      margin: 0px;
+    }
+    .productDescription img {
+      width: 100%;
+      height: 480px;
+    }
   }
 `;
 
 export const ProductCostCardStyle = styled.div`
+  min-width: 28%;
   padding-left: 20px;
   .productCostCard {
     border: 1px solid #ddd;
     padding: 16px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
     background-color: #fff;
     margin-bottom: 20px;
   }
@@ -233,7 +300,6 @@ export const ProductCostCardStyle = styled.div`
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    width: 300px;
   }
 
   .section {
@@ -284,8 +350,7 @@ export const ProductCostCardStyle = styled.div`
   }
 
   .storeLogo {
-    width: 40px;
-    height: 40px;
+    width: fit-content;
     border-radius: 50%;
   }
 
@@ -302,6 +367,21 @@ export const ProductCostCardStyle = styled.div`
     font-size: 14px;
     cursor: pointer;
     display: block;
-    width: 320px;
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    padding-left: 10px;
+    .installmentOptions button {
+      padding: 5px;
+      width: auto;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    padding-left: 10px;
+    .installmentOptions button {
+      padding: 5px;
+      width: auto;
+    }
   }
 `;

@@ -17,7 +17,7 @@ const Favourite = () => {
   return (
     <Container maxWidth="lg">
       <Grid
-        spacing={{ xs: 2.5, sm: 10, md: 3, lg: 2.5 }}
+        spacing={{ xs: 2.5, sm: 3, md: 3, lg: 2.5 }}
         container
         className="productGrid"
         sx={{

@@ -4,9 +4,16 @@ export const ProductContainer = styled.div`
   width: 100%;
   max-width: 60%;
   border: 1px solid rgba(106, 105, 105, 0.26);
-  border-radius: 16px;
+  border-radius: 6px;
   padding: 16px;
   background: #fff;
+
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
+    min-width: 96%;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    min-width: 96%;
+  }
 `;
 
 export const OverAllInfo = styled.div`
@@ -25,6 +32,15 @@ export const OverAllInfo = styled.div`
     gap: 10px;
     margin-bottom: 16px;
     align-items: center;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
+    min-width: 100%;
+    padding: 0;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    min-width: 100%;
+    padding: 0;
   }
 `;
 
@@ -55,7 +71,6 @@ export const DeliveryInfo = styled.div`
   .benefit {
     color: #10b981;
     font-size: 14px;
-    text-align: center;
     margin-bottom: 16px;
   }
 `;

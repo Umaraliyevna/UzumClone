@@ -18,7 +18,7 @@ export const ProductCardStyle = styled.div`
   }
   .productHeartButton {
     position: absolute;
-    left: 170px;
+    right: 0;
     top: 5px;
     width: 30px;
     height: 30px;
