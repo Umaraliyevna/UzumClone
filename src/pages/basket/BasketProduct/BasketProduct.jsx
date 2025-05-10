@@ -18,39 +18,56 @@ function BasketProduct({ id, image, price, description, oldPrice }) {
 
   return (
     <BasketCardStyle>
-      <div className="cart-item">
-        <h3 className="delivery-date">19-martdan boshlab yetkazamiz</h3>
-        <Stack direction="row" alignItems="center" gap={2}>
+      <h3 className="deliveryDate">19-martdan boshlab yetkazamiz</h3>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        gap={2}
+        alignItems="center"
+      >
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          className="deliveredProductImage"
+        >
           <input type="checkbox" checked className="checkbox" />
           <img
             src={image}
             alt="Nivea universal krem"
-            className="product-image"
+            className="productImage"
           />
-          <div>
-            <div className="product-details">
-              <p className="product-name">{description}</p>
+        </Stack>
+        <Stack direction="column" justifyContent="space-between">
+          <Stack
+            direction="row"
+            gap={{ sm: 1, md: 3 }}
+            justifyContent="space-between"
+          >
+            <p className="productName">{description}</p>
+            <div>
+              <p className="currentPrice">{price.toLocaleString()} so'm</p>
+              <p className="oldPrice">{oldPrice.toLocaleString()} so'm</p>
             </div>
-            <Stack direction="row" justifyContent="space-between">
+          </Stack>
+          <Stack direction="row" justifyContent="space-between">
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              gap={{ sm: 5, md: 7 }}
+            >
               <p className="vendor">Sotuvchi: "NIVEA"</p>
               <ProductTotal
                 id={id}
                 style={"hiddenButton"}
-                boxWidth={150}
-                boxHeight={30}
+                boxWidth={{ xs: 80, sm: 150, md: 120 }}
+                boxHeight={{ xs: 20, sm: 30, md: 30 }}
               />
             </Stack>
-          </div>
-
-          <div className="price-details">
-            <p className="current-price">{price} so'm</p>
-            <p className="old-price">{oldPrice} so'm</p>
             <IconButton onClick={handleDeleteProduct}>
-              <FiTrash2 className="delete-icon" />
+              <FiTrash2 className="deleteIcon" />
             </IconButton>
-          </div>
+          </Stack>
         </Stack>
-      </div>
+      </Stack>
     </BasketCardStyle>
   );
 }

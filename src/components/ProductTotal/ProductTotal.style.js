@@ -16,17 +16,19 @@ export const QuantityContainerStyle = styled.div`
 
   .quantityControl button {
     background-color: rgba(255, 255, 255, 0);
+    color: rgba(74, 74, 74, 0.59);
     border: none;
     cursor: pointer;
     padding-top: 0;
     margin-top: 0;
     font-size: 35px;
+    width: auto;
   }
 
   .quantityControl span {
     font-size: 25px;
-    font-weight: bold;
     padding: 0 5px;
+    color: rgb(49, 48, 48);
   }
 
   .cartButton {
@@ -42,5 +44,19 @@ export const QuantityContainerStyle = styled.div`
   }
   .hiddenButton {
     display: none;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    .quantityControl {
+      width: none;
+      padding: 3px;
+    }
+    .quantityControl button {
+      font-size: 25px;
+    }
+    .quantityControl span {
+      font-size: 18px;
+      padding: 0 3px;
+    }
   }
 `;

@@ -39,9 +39,9 @@ function ProductTotal({ id, children, style, boxWidth, boxHeight }) {
         width={boxWidth || "220px"}
         height={boxHeight || "50px"}
       >
-        <Button onClick={decrementAmount}>−</Button>
+        <button onClick={decrementAmount}>−</button>
         <span>{quantity}</span>
-        <Button onClick={incrementAmount}>+</Button>
+        <button onClick={incrementAmount}>+</button>
       </Box>
       <Link to={`/basket`} className={style}>
         <button className="cartButton">Savatga o'tish</button>
