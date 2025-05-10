@@ -11,4 +11,8 @@ export const Form = styled.form`
     font-weight: 600;
     margin-top: 10px;
   }
+  .formInput {
+    margin-top: 20px;
+    width: 100%;
+  }
 `;

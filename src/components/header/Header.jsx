@@ -22,7 +22,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { RiArchiveStackLine } from "react-icons/ri";
 import { MdOutlineShoppingBag } from "react-icons/md";
 
-import LoginForm from "src/LoginForm";
+import LoginForm from "src/components";
 import PATHS from "src/routes/routePath";
 import logo from "src/assets/headerImages/image.png";
 import check from "src/assets/headerImages/_vyg.png";

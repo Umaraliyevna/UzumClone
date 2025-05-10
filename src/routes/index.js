@@ -1,6 +1,6 @@
 import ProductInfo from "../pages/ProductInfo/ProductInfo";
 import Home from "../pages/Home/Home";
-import Basket from "../pages/basket/Basket";
+import Basket from "../pages/Basket/Basket";
 import PATHS from "./routePath";
 import Favourite from "src/pages/Favourite";
 
