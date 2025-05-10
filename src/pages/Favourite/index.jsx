@@ -13,7 +13,7 @@ const Favourite = () => {
   const products = PRODUCT_LIST.filter((item) =>
     favouriteProductId.includes(item.id)
   );
-  console.log(favouriteProductId, products);
+
   return (
     <Container maxWidth="lg">
       <Grid

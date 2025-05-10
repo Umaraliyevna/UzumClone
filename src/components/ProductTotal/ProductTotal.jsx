@@ -18,7 +18,6 @@ function ProductTotal({ id, children, style, boxWidth, boxHeight }) {
 
   const quantity =
     basket.find(({ product }) => product.id === id)?.quantity || 0;
-  console.log(id);
 
   const incrementAmount = useCallback(() => {
     dispatch(incrementQuantity(id));

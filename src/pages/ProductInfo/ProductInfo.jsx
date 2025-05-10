@@ -40,7 +40,6 @@ function ProductInfo() {
   const { id, image, title, reyting, perMonthSum, changedSum, realSum } =
     productInfo;
 
-  console.log(id);
   const handleProduct = useCallback(() => {
     dispatch(addToBasket({ product: productInfo, quantity: 1 }));
   }, [dispatch, id]);

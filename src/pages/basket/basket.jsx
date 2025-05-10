@@ -12,7 +12,6 @@ import { DeliveryInfo, OverAllInfo, ProductContainer } from "./Basket.style";
 function Basket() {
   const basketItems = useSelector((store) => store.basket);
 
-  console.log(basketItems);
   const realSum = basketItems.reduce(
     (acc, item) => acc + item.product.realSum * item.quantity,
     0

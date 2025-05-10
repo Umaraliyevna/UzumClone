@@ -46,7 +46,6 @@ function LoginForm(props) {
   };
 
   const onSubmit = (values) => {
-    console.log(values);
     handleClose();
     if (values.username.trim() && values.password.trim()) {
       onLogin(values.username.trim(), values.password);
